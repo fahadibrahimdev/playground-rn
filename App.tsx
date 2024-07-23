@@ -1,3 +1,4 @@
+import { Avatar } from "@rneui/themed";
 import React, { useEffect, useRef, useState } from "react";
 import { Animated, SafeAreaView, StyleSheet, Text, View } from "react-native";
 import MainAnimatedHeader from "rn-dev-dock";
@@ -33,6 +34,8 @@ function App(): React.JSX.Element {
   return (
     <SafeAreaView style={styles.container}>
 
+
+
       <MainAnimatedHeader scrollY={scrollY}
         leftComponentStyle={{
           justifyContent: "center",
@@ -61,6 +64,14 @@ function App(): React.JSX.Element {
           ></View>
         } />
 
+      <Avatar
+        size={64}
+        rounded
+        source={{
+          uri: 'https://cdn.pixabay.com/photo/2014/09/17/20/03/profile-449912__340.jpg',
+        }}
+      // key={`${chunkIndex}-${i}`}
+      />
       <Animated.SectionList // Wrap SectionList with Animated.createAnimatedComponent
         sections={DATA}
         renderItem={({ item }) => <Text style={{ padding: 10 }}>{item}</Text>}
