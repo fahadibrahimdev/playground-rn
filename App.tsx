@@ -2,6 +2,11 @@ import { Avatar } from "@rneui/themed";
 import React, { useEffect, useRef, useState } from "react";
 import { Animated, SafeAreaView, StyleSheet, Text, View } from "react-native";
 import MainAnimatedHeader from "rn-dev-dock";
+import ContentLoader from "./src/ContentLoader";
+// import { createShimmerPlaceholder } from "./src/ShimmerPlaceholder";
+// import LinearGradient from 'expo-linear-gradient';
+// import Shimmer from "./src/RNShimmeringView";
+
 
 function App(): React.JSX.Element {
   const [scrollY] = useState<Animated.Value>(new Animated.Value(0));
@@ -17,10 +22,23 @@ function App(): React.JSX.Element {
     { title: "Section 1", data: ["Item 1", "Item 2", "Item 3"] },
     { title: "Section 2", data: ["Item 4", "Item 5", "Item 6"] },
     { title: "Section 1", data: ["Item 1", "Item 2", "Item 3"] },
-
   ];
 
   const opacity = useRef(new Animated.Value(0)).current;
+
+  // const ShimmerPlaceHolder = createShimmerPlaceholder(LinearGradient)
+
+  const myViewRef = useRef(null);
+  const [viewWidth, setViewWidth] = useState(0);
+
+  const handleLayout = (event) => {
+    const { width } = event.nativeEvent.layout;
+    setViewWidth(width);
+
+    console.log("fahad width: ", width);
+  };
+
+
 
   useEffect(() => {
 
@@ -33,8 +51,6 @@ function App(): React.JSX.Element {
 
   return (
     <SafeAreaView style={styles.container}>
-
-
 
       <MainAnimatedHeader scrollY={scrollY}
         leftComponentStyle={{
@@ -62,16 +78,18 @@ function App(): React.JSX.Element {
               backgroundColor: "pink",
             }}
           ></View>
-        } />
+        }
+        orientation="landscape" />
 
-      <Avatar
+      {/* <Avatar
         size={64}
         rounded
         source={{
           uri: 'https://cdn.pixabay.com/photo/2014/09/17/20/03/profile-449912__340.jpg',
         }}
       // key={`${chunkIndex}-${i}`}
-      />
+      /> */}
+
       <Animated.SectionList // Wrap SectionList with Animated.createAnimatedComponent
         sections={DATA}
         renderItem={({ item }) => <Text style={{ padding: 10 }}>{item}</Text>}
@@ -86,6 +104,15 @@ function App(): React.JSX.Element {
           { useNativeDriver: false } // Use native driver for smoother performance on Android
         )}
       />
+
+      {/* <ContentLoader /> */}
+      {/* <Shimmer visible={true}>
+        <Text>
+          Wow, awesome here.
+        </Text>
+      </Shimmer> */}
+
+      {/* <ShimmerPlaceholder /> */}
     </SafeAreaView>
   );
 }
