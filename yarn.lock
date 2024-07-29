@@ -6246,10 +6246,10 @@ rimraf@~2.6.2:
   dependencies:
     glob "^7.1.3"
 
-rn-dev-dock@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.npmjs.org/rn-dev-dock/-/rn-dev-dock-0.1.3.tgz"
-  integrity sha512-qjFHCCUIMdTooHKNJE1y56+OyQFpwwLxD9lH7ajHoLRPVl2YgoVPRZDpCJtWGLV6WhwZOSSIwHcHwIp6TF598g==
+rn-dev-dock@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.npmjs.org/rn-dev-dock/-/rn-dev-dock-0.1.4.tgz"
+  integrity sha512-TI+ELiJfDZm4FO2y+7WfvFrhxCZSJJmtaW9z1sWD8SqnagOJ89KdODkbddmNwl7mvkgdlUMt14ZMGpq4rRQOjg==
 
 run-parallel@^1.1.9:
   version "1.2.0"

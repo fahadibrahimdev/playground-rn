@@ -1,8 +1,6 @@
-import { Avatar } from "@rneui/themed";
 import React, { useEffect, useRef, useState } from "react";
 import { Animated, SafeAreaView, StyleSheet, Text, View } from "react-native";
 import MainAnimatedHeader from "rn-dev-dock";
-import ContentLoader from "./src/ContentLoader";
 // import { createShimmerPlaceholder } from "./src/ShimmerPlaceholder";
 // import LinearGradient from 'expo-linear-gradient';
 // import Shimmer from "./src/RNShimmeringView";
@@ -57,29 +55,27 @@ function App(): React.JSX.Element {
           justifyContent: "center",
           alignItems: "center",
         }}
-        LeftComponent={
-          <View
-            style={{
-              width: "50%",
-              height: "50%",
-              backgroundColor: "pink",
-            }}
-          ></View>
-        }
+        LeftComponent={<View
+          style={{
+            width: "50%",
+            height: "50%",
+            backgroundColor: "pink",
+          }}
+        ></View>}
         rightComponentStyle={{
           justifyContent: "center",
           alignItems: "center",
         }}
-        RightComponent={
-          <View
-            style={{
-              width: "50%",
-              height: "50%",
-              backgroundColor: "pink",
-            }}
-          ></View>
-        }
-        orientation="landscape" />
+        RightComponent={<View
+          style={{
+            width: "50%",
+            height: "50%",
+            backgroundColor: "pink",
+          }}
+        ></View>}
+        title={"Fahad Ibrahim"}
+        description="fibrahim@ssidecisions.com"
+        avatarImg={require('./src/assets/appAvatar.png')} />
 
       {/* <Avatar
         size={64}
